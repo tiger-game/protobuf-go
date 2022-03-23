@@ -45,6 +45,7 @@ func main() {
 			return errors.New("protoc-gen-go: plugins are not supported; use 'protoc --go-grpc_out=...' to generate gRPC\n\n" +
 				"See " + grpcDocURL + " for more information.")
 		}
+		gengo.GenAllExtensionInfo(gen.Files)
 		for _, f := range gen.Files {
 			if f.Generate {
 				gengo.GenerateFile(gen, f)

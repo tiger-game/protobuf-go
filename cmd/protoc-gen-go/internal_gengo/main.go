@@ -538,6 +538,8 @@ func genMessageBaseMethods(g *protogen.GeneratedFile, f *fileInfo, m *messageInf
 		g.P()
 		f.needRawDesc = true
 	}
+
+	genMessageOptions(g, f, m)
 }
 
 func genMessageGetterMethods(g *protogen.GeneratedFile, f *fileInfo, m *messageInfo) {
